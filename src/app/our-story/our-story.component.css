@@ -1,0 +1,21 @@
+@media(orientation: portrait)
+{
+	body{
+		text-align: center;
+	}
+	#learn-guitar{
+     position: relative; top: 20px;
+	}
+  #learn-songs{
+	  width: 90%;
+	  
+  }
+  #guitar{
+    width: 435px;
+	height: 325px;
+	border-radius: 5px;
+  }
+  #faq{
+	  position: relative; top: 40px;
+  }
+}

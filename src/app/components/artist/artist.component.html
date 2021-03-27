@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="container">
+   <router-outlet></router-outlet>
+<app-loading *ngIf="loadingArtist"></app-loading>
+   <div class="row animated fadeIn" *ngIf= "!loadingArtist">
+       <div class="col-2">
+           <img id="profile"[src]= "artist.images | noimage" class= "img-thumbnail img-circle" alt="{{artist}}">
+       </div>
+       <div class="col">
+           <h1 class="text-light"> {{artist.name}}</h1>
+           <p>
+               <a class="text-light font-weight-bold" [href]="artist.external_urls.spotify" target= "_black"> 
+                   See on spotify
+               </a>
+           </p>
+       </div>
+       <div class="col-4 text-right">
+           <button routerLink="/search" class="btn btn-outline-light font-weight-bold">Go Back</button>
+       </div>
+   </div>
+
+    <div class="row m-5">
+        <div class="col">
+            <table class="table">
+                <thead>
+                <tr> 
+                    <th class="text-light">Photo</th>
+                    <th class="text-light">Album</th>
+                    <th class="text-light"> Song</th>
+                    <th class="text-light">Preview</th>
+                </tr>
+             </thead>
+
+                <tbody> 
+                 <tr *ngFor="let track of topTracks"> 
+                  <td> 
+                     <img [src]="track.album.images | noimage" class="img-thumb">
+                  </td>
+                  <td>{{track.album.name}} </td>
+                  <td>{{track.name }} </td>
+                  <td> <iframe [src]="track.uri | safepipe" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+                  <!-- <td> <audio [src]="track.preview_url" controls> </audio> </td> --> -->
+                </tbody>
+            </table>
+        </div>
+    </div>

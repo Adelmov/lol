@@ -1,0 +1,10 @@
+.fa-youtube{
+  width: 80%;
+}
+@media(orientation: portrait)
+{
+  .youtube-videos{
+    width: 440px;
+    height: 345px;
+  }
+}
