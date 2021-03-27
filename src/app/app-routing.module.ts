@@ -10,7 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '/', component: HomeComponent},
   {path: 'aboutme', component: AboutMeComponent },
   {path: 'story', component: OurStoryComponent},
   {path: 'aboutadelmo',component: AboutMeAComponent},
